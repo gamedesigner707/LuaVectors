@@ -330,17 +330,13 @@ math.vectormt = {
 
    __mul = function(q1,q2)
 
-      --Make Mathematical conversion class
-
       local function types(typ)
 
-         return typ=="number" and 0 or typ=="vector" and 1 or -1
+         return typ=="number" and 0 or typ=="vector" and 1 or 2
 
       end
 
       if types(type(q1))+types(type(q2)) < 1 then
-
-         print(type(q2))
 
          return nil
 
@@ -366,37 +362,9 @@ math.vectormt = {
 
          end
 
-      else
-
-         --Vector multiplication
-
-         --scaledv = math.dot(q1,q2)
-
-         for i,v in pairs(q1) do
-
-            scaledv[i] = v*q2[i]
-
-         end
-
       end
 
       return scaledv
-
-   end,
-
-
-
-   __pow = function(t,n)
-
-      local result = math.vector()
-
-      for i,v in pairs(t) do
-
-         result[i] = v^n
-
-      end
-
-      return result
 
    end,
 
